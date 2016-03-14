@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hiii!</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+  </head>
+  <body>
+  <h1 class="center">This is a converter, that allows you to convert from and to either Polish Notation, Infix  Notation or Reverse Polish Notation.</h1>
+  <div class="center" id="selectContainer">
+    {% if result%}
+      <h3>Result: {{result|safe}}</h3>
+    {% endif %}
+    <h4>Select which you will choose from. </h4>
+    <button  class="from">Polish Notation</button><button class="from">Infix</button><button class="from">Reverse Polish Notation</button>
+    <div id="commandContainer" class="hidden"><input id ="inputCommand" type="text" name="inputCommand" placeholder="Type expression here"></div>
+    <h4>Select which you will choose to.</h4>
+    <button class="to">Polish Notation</button><button class="to">Infix</button><button class="to">Reverse Polish Notation</button>
+    <h4 id="fromTo" class="hidden">From: <span id="from"></span> to <span id="to"></span></h4>
+    <form id="calculate" class="hidden" action="/calculate" method="post" accept-charset="utf-8">
+      <input id="expression" class="hidden" type="text" name="expression"><input id="conversionType" class="hidden" type="text" name="conversionType"><input id="conversionType2" class="hidden" type="text" name="conversionType2"><button type="submit">Calculate!</button>
+    </form>
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  <script src="{{ url_for('static', filename='main.js') }}"></script>
+  </body>
+</html>

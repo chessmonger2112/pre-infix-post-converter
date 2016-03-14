@@ -1,0 +1,15 @@
+.center{
+  text-align: center;
+}
+
+#selectContainer{
+  padding-top: 15%;
+}
+
+#inputCommand{
+  margin-top: 15px;
+}
+
+.hidden{
+  display: none;
+}
